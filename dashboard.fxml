@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" spacing="25">
+    <Label text="Dashboard" styleClass="title"/>
+    <Label text="Bem-vindo ao Sistema de Biblioteca Digital!" styleClass="subtitle"/>
+    
+    <HBox spacing="20">
+        <VBox styleClass="stat-card" prefWidth="200">
+            <Label text="📚" style="-fx-font-size: 32px;"/>
+            <Label text="Livros" styleClass="stat-label"/>
+            <Label text="Gerencie o acervo da biblioteca" style="-fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+        </VBox>
+        <VBox styleClass="stat-card" prefWidth="200">
+            <Label text="📋" style="-fx-font-size: 32px;"/>
+            <Label text="Empréstimos" styleClass="stat-label"/>
+            <Label text="Controle empréstimos e devoluções" style="-fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+        </VBox>
+        <VBox styleClass="stat-card" prefWidth="200">
+            <Label text="📊" style="-fx-font-size: 32px;"/>
+            <Label text="Relatórios" styleClass="stat-label"/>
+            <Label text="Gere relatórios em PDF" style="-fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+        </VBox>
+    </HBox>
+    
+    <VBox styleClass="content-panel" spacing="10">
+        <Label text="Instruções de Uso" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+        <Label text="1. Cadastre livros no menu 'Livros'" style="-fx-text-fill: #7f8c8d;"/>
+        <Label text="2. Cadastre usuários no menu 'Usuários' (apenas administradores)" style="-fx-text-fill: #7f8c8d;"/>
+        <Label text="3. Realize empréstimos no menu 'Empréstimos'" style="-fx-text-fill: #7f8c8d;"/>
+        <Label text="4. Gere relatórios no menu 'Relatórios'" style="-fx-text-fill: #7f8c8d;"/>
+    </VBox>
+</VBox>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biblioteca.controller.LivroController" spacing="20">
+    
+    <Label text="Gestão de Livros" styleClass="title"/>
+    
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+        <VBox HBox.hgrow="ALWAYS" styleClass="content-panel">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="txtBusca" promptText="Buscar por título..." prefWidth="250"/>
+                <Button text="Buscar" styleClass="btn-primary" onAction="#handleBuscar"/>
+            </HBox>
+            <padding><Insets top="15"/></padding>
+            
+            <TableView fx:id="tableLivros" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colTitulo" text="Título" prefWidth="220"/>
+                    <TableColumn fx:id="colAutor" text="Autor" prefWidth="150"/>
+                    <TableColumn fx:id="colIsbn" text="ISBN" prefWidth="130"/>
+                    <TableColumn fx:id="colCategoria" text="Categoria" prefWidth="100"/>
+                    <TableColumn fx:id="colDisponivel" text="Disponível" prefWidth="80"/>
+                </columns>
+            </TableView>
+        </VBox>
+        
+        <VBox prefWidth="300" styleClass="form-panel" spacing="15">
+            <Label text="Cadastro / Edição" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            
+            <VBox spacing="5"><Label text="Título *" styleClass="label-form"/>
+                <TextField fx:id="txtTitulo" promptText="Título do livro"/></VBox>
+            
+            <VBox spacing="5"><Label text="Autor *" styleClass="label-form"/>
+                <TextField fx:id="txtAutor" promptText="Nome do autor"/></VBox>
+            
+            <VBox spacing="5"><Label text="ISBN *" styleClass="label-form"/>
+                <TextField fx:id="txtIsbn" promptText="978-..."/></VBox>
+            
+            <VBox spacing="5"><Label text="Categoria *" styleClass="label-form"/>
+                <ComboBox fx:id="cmbCategoria" prefWidth="260"/></VBox>
+            
+            <VBox spacing="5"><Label text="Quantidade" styleClass="label-form"/>
+                <Spinner fx:id="spnQuantidade" prefWidth="260"/></VBox>
+            
+            <Label fx:id="lblMensagem" wrapText="true"/>
+            
+            <HBox spacing="10">
+                <Button text="Salvar" styleClass="btn-success" onAction="#handleSalvar"/>
+                <Button text="Excluir" styleClass="btn-danger" onAction="#handleExcluir"/>
+                <Button text="Limpar" styleClass="btn-secondary" onAction="#handleLimpar"/>
+            </HBox>
+        </VBox>
+    </HBox>
+</VBox>

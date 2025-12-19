@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biblioteca.controller.UsuarioController" spacing="20">
+    
+    <Label text="Gestão de Usuários" styleClass="title"/>
+    
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+        <!-- Tabela -->
+        <VBox HBox.hgrow="ALWAYS" styleClass="content-panel">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="txtBusca" promptText="Buscar por nome..." prefWidth="250"/>
+                <Button text="Buscar" styleClass="btn-primary" onAction="#handleBuscar"/>
+            </HBox>
+            <padding><Insets top="15"/></padding>
+            
+            <TableView fx:id="tableUsuarios" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colNome" text="Nome" prefWidth="200"/>
+                    <TableColumn fx:id="colEmail" text="E-mail" prefWidth="200"/>
+                    <TableColumn fx:id="colTipo" text="Tipo" prefWidth="120"/>
+                    <TableColumn fx:id="colAtivo" text="Ativo" prefWidth="70"/>
+                </columns>
+            </TableView>
+        </VBox>
+        
+        <!-- Formulário -->
+        <VBox prefWidth="300" styleClass="form-panel" spacing="15">
+            <Label text="Cadastro / Edição" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            
+            <VBox spacing="5">
+                <Label text="Nome *" styleClass="label-form"/>
+                <TextField fx:id="txtNome" promptText="Nome completo"/>
+            </VBox>
+            
+            <VBox spacing="5">
+                <Label text="E-mail *" styleClass="label-form"/>
+                <TextField fx:id="txtEmail" promptText="email@exemplo.com"/>
+            </VBox>
+            
+            <VBox spacing="5">
+                <Label text="Senha *" styleClass="label-form"/>
+                <PasswordField fx:id="txtSenha" promptText="Mínimo 6 caracteres"/>
+            </VBox>
+            
+            <VBox spacing="5">
+                <Label text="Tipo *" styleClass="label-form"/>
+                <ComboBox fx:id="cmbTipo" prefWidth="260"/>
+            </VBox>
+            
+            <CheckBox fx:id="chkAtivo" text="Usuário Ativo"/>
+            
+            <Label fx:id="lblMensagem" wrapText="true"/>
+            
+            <HBox spacing="10">
+                <Button text="Salvar" styleClass="btn-success" onAction="#handleSalvar"/>
+                <Button text="Excluir" styleClass="btn-danger" onAction="#handleExcluir"/>
+                <Button text="Limpar" styleClass="btn-secondary" onAction="#handleLimpar"/>
+            </HBox>
+        </VBox>
+    </HBox>
+</VBox>

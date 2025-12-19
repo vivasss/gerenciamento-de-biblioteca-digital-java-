@@ -1,0 +1,312 @@
+/* ============================================
+   BIBLIOTECA DIGITAL - ESTILOS CSS
+   ============================================ */
+
+/* Cores principais */
+:root {
+    -primary: #2980b9;
+    -primary-dark: #1a5276;
+    -secondary: #27ae60;
+    -danger: #e74c3c;
+    -warning: #f39c12;
+    -dark: #2c3e50;
+    -light: #ecf0f1;
+    -white: #ffffff;
+}
+
+/* Reset e base */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f5f6fa;
+}
+
+/* Containers */
+.login-container {
+    -fx-background-color: linear-gradient(to bottom, #667eea, #764ba2);
+    -fx-padding: 40;
+}
+
+.login-box {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 20, 0, 0, 5);
+}
+
+.main-container {
+    -fx-background-color: #f5f6fa;
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 0;
+}
+
+.sidebar .logo-area {
+    -fx-background-color: #1a252f;
+    -fx-padding: 20;
+}
+
+.sidebar .logo-text {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.sidebar .menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #bdc3c7;
+    -fx-font-size: 14px;
+    -fx-padding: 15 20;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-pref-width: 200;
+}
+
+.sidebar .menu-button:hover {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+}
+
+.sidebar .menu-button:focused {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+}
+
+/* Top bar */
+.top-bar {
+    -fx-background-color: white;
+    -fx-padding: 15 25;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+.user-info {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Cards */
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+.stat-card .stat-value {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2980b9;
+}
+
+.stat-card .stat-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.stat-card.danger .stat-value {
+    -fx-text-fill: #e74c3c;
+}
+
+.stat-card.success .stat-value {
+    -fx-text-fill: #27ae60;
+}
+
+/* Botões */
+.btn-primary {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 25;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #3498db;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #1a5276;
+}
+
+.btn-success {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 25;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.btn-success:hover {
+    -fx-background-color: #2ecc71;
+}
+
+.btn-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 25;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+.btn-secondary {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-padding: 10 25;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+/* Campos de texto */
+.text-field, .password-field, .text-area {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(41,128,185,0.3), 10, 0, 0, 0);
+}
+
+/* ComboBox e Spinner */
+.combo-box, .spinner {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* Tabelas */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dfe6e9;
+    -fx-border-radius: 5;
+}
+
+.table-view .column-header {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 10;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: #ecf0f1;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #f8f9fa;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #3498db;
+}
+
+.table-view .table-row-cell:selected .text {
+    -fx-fill: white;
+}
+
+/* Labels */
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.subtitle {
+    -fx-font-size: 16px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.label-form {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Panels */
+.content-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-padding: 25;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+.form-panel {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 8;
+    -fx-padding: 20;
+    -fx-border-color: #dfe6e9;
+    -fx-border-radius: 8;
+}
+
+/* Radio Buttons */
+.radio-button {
+    -fx-text-fill: #2c3e50;
+}
+
+.radio-button:selected .radio {
+    -fx-background-color: #2980b9;
+}
+
+/* CheckBox */
+.check-box:selected .box {
+    -fx-background-color: #2980b9;
+}
+
+/* Scrollbar */
+.scroll-bar {
+    -fx-background-color: #f1f1f1;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #c1c1c1;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #a1a1a1;
+}
+
+/* Status badges */
+.status-ativo {
+    -fx-background-color: #d5f4e6;
+    -fx-text-fill: #27ae60;
+    -fx-padding: 3 8;
+    -fx-background-radius: 3;
+}
+
+.status-atrasado {
+    -fx-background-color: #fdeaea;
+    -fx-text-fill: #e74c3c;
+    -fx-padding: 3 8;
+    -fx-background-radius: 3;
+}
+
+.status-devolvido {
+    -fx-background-color: #e8f4f8;
+    -fx-text-fill: #2980b9;
+    -fx-padding: 3 8;
+    -fx-background-radius: 3;
+}

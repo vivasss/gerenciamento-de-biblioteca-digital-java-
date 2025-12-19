@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biblioteca.controller.RelatorioController" spacing="20">
+    
+    <Label text="Relatórios" styleClass="title"/>
+    
+    <HBox spacing="20">
+        <!-- Opções de Relatório -->
+        <VBox styleClass="content-panel" spacing="20" prefWidth="400">
+            <Label text="Gerar Relatório PDF" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Limite de resultados:"/>
+                <Spinner fx:id="spnLimite" prefWidth="100"/>
+            </HBox>
+            
+            <VBox spacing="10">
+                <Button text="📊 Livros Mais Emprestados" styleClass="btn-primary" 
+                        prefWidth="350" prefHeight="40" onAction="#handleLivrosMaisEmprestados"/>
+                
+                <Button text="👥 Usuários com Mais Empréstimos" styleClass="btn-primary" 
+                        prefWidth="350" prefHeight="40" onAction="#handleUsuariosMaisEmprestimos"/>
+                
+                <Button text="⚠️ Empréstimos Atrasados" styleClass="btn-danger" 
+                        prefWidth="350" prefHeight="40" onAction="#handleEmprestimosAtrasados"/>
+            </VBox>
+            
+            <Label fx:id="lblMensagem" wrapText="true"/>
+        </VBox>
+        
+        <!-- Preview -->
+        <VBox HBox.hgrow="ALWAYS" styleClass="content-panel">
+            <Label text="Prévia do Relatório" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            <padding><Insets top="10"/></padding>
+            <TextArea fx:id="txtPreview" VBox.vgrow="ALWAYS" editable="false" 
+                      style="-fx-font-family: monospace;"/>
+        </VBox>
+    </HBox>
+</VBox>

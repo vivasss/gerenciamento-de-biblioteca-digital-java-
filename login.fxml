@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.biblioteca.controller.LoginController"
+      styleClass="login-container" alignment="CENTER"
+      prefWidth="400" prefHeight="500">
+    
+    <VBox styleClass="login-box" alignment="CENTER" spacing="20" maxWidth="320">
+        
+        <!-- Logo -->
+        <VBox alignment="CENTER" spacing="5">
+            <Label text="📚" style="-fx-font-size: 48px;"/>
+            <Label text="Biblioteca Digital" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Label text="Sistema de Gerenciamento" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+        </VBox>
+        
+        <!-- Formulário -->
+        <VBox spacing="15" alignment="CENTER">
+            <VBox spacing="5">
+                <Label text="E-mail" styleClass="label-form"/>
+                <TextField fx:id="txtEmail" promptText="seu@email.com" prefWidth="260"/>
+            </VBox>
+            
+            <VBox spacing="5">
+                <Label text="Senha" styleClass="label-form"/>
+                <PasswordField fx:id="txtSenha" promptText="••••••••" prefWidth="260"/>
+            </VBox>
+            
+            <Label fx:id="lblMensagem" text="" wrapText="true" maxWidth="260"/>
+            
+            <Button fx:id="btnLogin" text="Entrar" styleClass="btn-primary" 
+                    prefWidth="260" prefHeight="40" onAction="#handleLogin"/>
+        </VBox>
+        
+        <!-- Rodapé -->
+        <Label text="v1.0 © 2024 Biblioteca Digital" 
+               style="-fx-font-size: 11px; -fx-text-fill: #bdc3c7;"/>
+    </VBox>
+</VBox>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biblioteca.controller.EmprestimoController" spacing="20">
+    
+    <Label text="Gestão de Empréstimos" styleClass="title"/>
+    
+    <HBox spacing="20">
+        <!-- Novo Empréstimo -->
+        <VBox styleClass="form-panel" spacing="15" prefWidth="350">
+            <Label text="Novo Empréstimo" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            
+            <VBox spacing="5"><Label text="Usuário" styleClass="label-form"/>
+                <ComboBox fx:id="cmbUsuario" prefWidth="310" promptText="Selecione o usuário"/></VBox>
+            
+            <VBox spacing="5"><Label text="Livro Disponível" styleClass="label-form"/>
+                <ComboBox fx:id="cmbLivro" prefWidth="310" promptText="Selecione o livro"/></VBox>
+            
+            <Label fx:id="lblMensagem" wrapText="true"/>
+            
+            <HBox spacing="10">
+                <Button text="Realizar Empréstimo" styleClass="btn-success" onAction="#handleEmprestar"/>
+                <Button text="Devolver Selecionado" styleClass="btn-primary" onAction="#handleDevolver"/>
+            </HBox>
+        </VBox>
+        
+        <!-- Filtros -->
+        <VBox styleClass="form-panel" spacing="10">
+            <Label text="Filtrar" style="-fx-font-weight: bold;"/>
+            <RadioButton fx:id="rbTodos" text="Todos"/>
+            <RadioButton fx:id="rbAtivos" text="Ativos"/>
+            <RadioButton fx:id="rbAtrasados" text="Atrasados"/>
+        </VBox>
+    </HBox>
+    
+    <!-- Tabela -->
+    <VBox VBox.vgrow="ALWAYS" styleClass="content-panel">
+        <TableView fx:id="tableEmprestimos" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colUsuario" text="Usuário" prefWidth="180"/>
+                <TableColumn fx:id="colLivro" text="Livro" prefWidth="220"/>
+                <TableColumn fx:id="colDataEmp" text="Empréstimo" prefWidth="100"/>
+                <TableColumn fx:id="colDataDev" text="Devolução" prefWidth="100"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </VBox>
+</VBox>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.biblioteca.controller.MainController"
+            styleClass="main-container" prefWidth="1200" prefHeight="700">
+    
+    <!-- Sidebar -->
+    <left>
+        <VBox styleClass="sidebar" prefWidth="220">
+            <VBox styleClass="logo-area" alignment="CENTER">
+                <Label text="📚 Biblioteca" styleClass="logo-text"/>
+            </VBox>
+            
+            <VBox spacing="2" VBox.vgrow="ALWAYS">
+                <padding><Insets top="20"/></padding>
+                <Button text="🏠  Dashboard" styleClass="menu-button" onAction="#showDashboard"/>
+                <Button text="📖  Livros" styleClass="menu-button" onAction="#showLivros"/>
+                <Button fx:id="btnUsuarios" text="👥  Usuários" styleClass="menu-button" onAction="#showUsuarios"/>
+                <Button text="📋  Empréstimos" styleClass="menu-button" onAction="#showEmprestimos"/>
+                <Button text="📊  Relatórios" styleClass="menu-button" onAction="#showRelatorios"/>
+            </VBox>
+            
+            <VBox>
+                <Button text="🚪  Sair" styleClass="menu-button" onAction="#handleLogout"/>
+            </VBox>
+        </VBox>
+    </left>
+    
+    <!-- Conteúdo principal -->
+    <center>
+        <VBox>
+            <!-- Top Bar -->
+            <HBox styleClass="top-bar" alignment="CENTER_RIGHT" spacing="15">
+                <Label text="Bem-vindo, " styleClass="user-info"/>
+                <Label fx:id="lblUsuario" text="Usuário" style="-fx-font-weight: bold;"/>
+                <Label text="|" style="-fx-text-fill: #bdc3c7;"/>
+                <Label fx:id="lblTipoUsuario" text="Tipo" style="-fx-text-fill: #7f8c8d;"/>
+            </HBox>
+            
+            <!-- Área de conteúdo -->
+            <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS">
+                <padding><Insets topRightBottomLeft="25"/></padding>
+                
+                <!-- Dashboard padrão -->
+                <VBox spacing="25">
+                    <Label text="Dashboard" styleClass="title"/>
+                    
+                    <HBox spacing="20">
+                        <VBox styleClass="stat-card" prefWidth="200">
+                            <Label fx:id="lblTotalLivros" text="0" styleClass="stat-value"/>
+                            <Label text="Total de Livros" styleClass="stat-label"/>
+                        </VBox>
+                        <VBox styleClass="stat-card" prefWidth="200">
+                            <Label fx:id="lblTotalUsuarios" text="0" styleClass="stat-value"/>
+                            <Label text="Usuários Cadastrados" styleClass="stat-label"/>
+                        </VBox>
+                        <VBox styleClass="stat-card success" prefWidth="200">
+                            <Label fx:id="lblEmprestimosAtivos" text="0" styleClass="stat-value"/>
+                            <Label text="Empréstimos Ativos" styleClass="stat-label"/>
+                        </VBox>
+                        <VBox styleClass="stat-card danger" prefWidth="200">
+                            <Label fx:id="lblEmprestimosAtrasados" text="0" styleClass="stat-value"/>
+                            <Label text="Empréstimos Atrasados" styleClass="stat-label"/>
+                        </VBox>
+                    </HBox>
+                    
+                    <Label text="Selecione uma opção no menu lateral para começar." styleClass="subtitle"/>
+                </VBox>
+            </StackPane>
+        </VBox>
+    </center>
+</BorderPane>
